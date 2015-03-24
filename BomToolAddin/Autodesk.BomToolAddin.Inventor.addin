@@ -1,0 +1,14 @@
+<Addin Type="Standard">
+  <!--Created for Autodesk Inventor Version 18.0-->
+  <ClassId>{4020c616-4cca-49ce-8ed6-64fd15c6e2a7}</ClassId>
+  <ClientId>{4020c616-4cca-49ce-8ed6-64fd15c6e2a7}</ClientId>
+  <DisplayName>BomToolAddin</DisplayName>
+  <Description>BomToolAddin</Description>
+  <Assembly>BomToolAddin.dll</Assembly>
+  <LoadOnStartUp>1</LoadOnStartUp>
+  <UserUnloadable>1</UserUnloadable>
+  <Hidden>0</Hidden>
+  <SupportedSoftwareVersionGreaterThan>17..</SupportedSoftwareVersionGreaterThan>
+  <DataVersion>1</DataVersion>
+  <UserInterfaceVersion>1</UserInterfaceVersion>
+</Addin>

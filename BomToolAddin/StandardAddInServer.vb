@@ -80,16 +80,16 @@ Namespace BomToolAddin
             Dim PartsList As List(Of BomRowItem)
             'pass the local variables to our external .dll
             'XTCS.InventorApplication = m_inventorApplication
-            Dim oDoc As AssemblyDocument
-            Dim oDrawDoc As DrawingDocument
+            Dim oDoc As AssemblyDocument = Nothing
+            'Dim oDrawDoc As DrawingDocument = Nothing
             ' Set a reference to the BOM
-            Dim oBOM As BOM
+            Dim oBOM As BOM = Nothing
             BOMSpreadsheetName = System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(m_inventorApplication.ActiveDocument.FullDocumentName)) & "\DRGS\BOM-" & GetFriendlyName(System.IO.Path.GetFileNameWithoutExtension(m_inventorApplication.ActiveDocument.FullFileName)) & ".xlsx"
             If TypeOf m_inventorApplication.ActiveDocument Is AssemblyDocument Then
                 oDoc = m_inventorApplication.ActiveDocument
                 oBOM = oDoc.ComponentDefinition.BOM
             ElseIf TypeOf m_inventorApplication.ActiveDocument Is DrawingDocument Then
-                oDrawDoc = m_inventorApplication.ActiveDocument
+                'oDrawDoc = m_inventorApplication.ActiveDocument
                 'MessageBox.Show("Skipping BOM Creation since you already did that bit didn't you?", "Being sarcastic, of course you did, right!?")
                 MessageBox.Show("Looking for: " & BOMSpreadsheetName)
                 UpdateBOMSpreadsheet(BOMSpreadsheetName)
@@ -375,7 +375,7 @@ Namespace BomToolAddin
         ''' <param name="oPartsList">our sorted, renumbered partslist object</param>
         ''' <remarks></remarks>
         Public Sub ReturnPartsListToExcel(ByVal oPartsList As List(Of BomRowItem))
-            Dim res As Boolean
+            'Dim res As Boolean
             If MessageBox.Show("Will the Parts list fit on the drawing?", "Title", MessageBoxButtons.YesNo) = DialogResult.Yes Then
                 'we're done here because the parts list will fit.
                 Exit Sub
